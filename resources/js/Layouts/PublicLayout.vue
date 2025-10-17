@@ -1,8 +1,19 @@
 <template>
   <div class="layout-root">
-    <div class="app-container">
-      <Nav />
-    </div>
+    <!-- header с бордером во всю ширину -->
+    <header
+      :class="['w-full transition-colors duration-300', expanded ? 'border-0 bg-[#232323]' : 'border-b border-gray-500 bg-white']">
+      <div class="app-container">
+        <Nav @expanded-change="expanded = $event" />
+      </div>
+    </header>
+
+    <!-- Спейсер под шапкой: толкает контент вниз, когда раскрыта панель услуг (только на десктопе) -->
+    <div
+      aria-hidden="true"
+      class="hidden lg:block w-full transition-[height] duration-300 ease-out"
+      :style="{ height: expanded ? '140px' : '0px' }"
+    />
 
     <main class="flex-1">
       <div class="app-container content-wrapper">
@@ -11,36 +22,17 @@
     </main>
 
     <footer>
-      <div class="app-container">
-        <!-- Footer content -->
-      </div>
+      <Footer />
     </footer>
   </div>
-
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import Nav from '../Shared/Nav.vue';
+import Footer from '../Shared/Footer.vue';
+
+const expanded = ref(false);
 </script>
 
-<style>
-.app-container {
-  width: 100%;
-  max-width: 1440px; /* нужная ширина */
-  margin: 0 auto;
-  padding: 0 24px;
-  box-sizing: border-box;
-}
-
-.layout-root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main { flex: 1; }
-
-.content-wrapper {
-  padding: 32px 0;
-}
-</style>
+<style></style>
