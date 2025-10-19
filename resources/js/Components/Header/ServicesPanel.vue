@@ -74,13 +74,14 @@ export default {
     overflow: hidden;
     pointer-events: none;
     z-index: 20;
-    transition: height .28s ease;
+    transition: height .28s ease, background-color .28s ease;
     color: #e5e7eb;
 }
 
 .nav-panel.is-expanded {
     height: var(--panel-h);
     pointer-events: auto;
+    background: #232323; /* чёрный фон у самой панели */
 }
 
 .panel-inner {
@@ -110,6 +111,17 @@ export default {
     opacity: 1;
     transform: none;
     transition-delay: 60ms;
+}
+
+/* При раскрытии поднимаем контент чуть выше */
+.nav-panel.is-expanded .panel-inner {
+    align-items: flex-start;
+    padding-top: 6px;
+}
+
+/* Гарантируем светлый текст ссылок на тёмном фоне, перекрывая возможные глобальные стили .menu-link */
+.nav-panel.is-expanded .service-link {
+    color: #e5e7eb;
 }
 
 .service-link {

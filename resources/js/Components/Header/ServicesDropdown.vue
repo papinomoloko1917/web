@@ -1,6 +1,6 @@
 <template>
     <div class="relative" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
-        <button @click="toggleDropdown" class="text-current menu-link menu-link--short-underline"
+        <button @click="toggleDropdown" class="text-current menu-link menu-link--short-underline cursor-pointer"
             :class="{ 'leaving': isLeaving }">
             Услуги
             <svg id="chev-services" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

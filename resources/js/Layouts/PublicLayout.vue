@@ -1,36 +1,37 @@
 <template>
-  <div class="layout-root">
+  <div class="layout-root overflow-x-hidden">
     <!-- header с бордером во всю ширину -->
     <header
-      :class="['w-full transition-colors duration-300', expanded ? 'border-0 bg-[#232323]' : 'border-b border-gray-500 bg-white']">
-      <div class="app-container">
-        <Nav @expanded-change="expanded = $event" />
-      </div>
+      :class="['relative z-40 w-full transition-colors duration-300', expanded ? 'border-0 bg-[#232323]' : 'border-b border-gray-500 bg-white']">
+      <!-- Убираем внешний .app-container: сам Nav содержит внутренний контейнер .nav-inner -->
+      <Nav @expanded-change="expanded = $event" />
     </header>
 
-    <!-- Спейсер под шапкой: толкает контент вниз, когда раскрыта панель услуг (только на десктопе) -->
-    <div
-      aria-hidden="true"
-      class="hidden lg:block w-full transition-[height] duration-300 ease-out"
-      :style="{ height: expanded ? '140px' : '0px' }"
-    />
+    <!-- Убрали спейсер: панель услуг теперь накрывает контент на десктопе, не смещая его -->
 
     <main class="flex-1">
-      <div class="app-container content-wrapper">
+      <!-- Оставляем только вертикальные отступы контента, без вложенного .app-container,
+           чтобы секции сами управляли шириной через собственные .app-container -->
+      <div class="content-wrapper">
         <slot />
       </div>
     </main>
+
+    <!-- Back to top button -->
+    <BackToTop />
 
     <footer>
       <Footer />
     </footer>
   </div>
+  
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import Nav from '../Shared/Nav.vue';
 import Footer from '../Shared/Footer.vue';
+import BackToTop from '../Components/BackToTop.vue';
 
 const expanded = ref(false);
 </script>

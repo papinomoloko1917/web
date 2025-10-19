@@ -138,14 +138,14 @@ export default {
     min-height: var(--nav-h);
     overflow: visible;
     --nav-h: 72px;
-    --panel-h: 140px;
+    --panel-h: 90px; /* ещё на ~20% меньше от 112px */
     /* плавное наращивание высоты контейнера, чтобы толкать контент вниз */
     transition: min-height .42s cubic-bezier(.22, 1, .36, 1);
 }
 
-/* При раскрытии увеличиваем высоту контейнера на высоту панели */
+/* Больше не увеличиваем высоту контейнера при раскрытии на десктопе — панель перекрывает контент */
 .nav-root.nav--expanded {
-    min-height: calc(var(--nav-h) + var(--panel-h));
+    min-height: var(--nav-h);
 }
 
 /* Зона навигации объединяет область шапки и панель на ширину экрана */
@@ -158,6 +158,11 @@ export default {
     height: var(--nav-h);
     /* зона покрывает текущую высоту nav-root */
     z-index: 10;
+}
+
+/* При раскрытии увеличиваем интерактивную зону, чтобы курсор мог перейти на панель */
+.nav-zone.is-expanded {
+    height: calc(var(--nav-h) + var(--panel-h));
 }
 
 /* Заливка самого navbar (верхняя часть), плавно темнеет */
@@ -186,11 +191,12 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    bottom: 0;
+    /* располагаем фон сразу под шапкой, чтобы он раскрывался вниз поверх контента */
+    top: var(--nav-h);
     height: 0;
     /* растёт вверх из низа nav-root */
     box-shadow: none;
-    z-index: 0;
+    z-index: 15;
     transform-origin: top;
     pointer-events: none;
     /* фон никогда не перехватывает клики */
@@ -199,9 +205,9 @@ export default {
 
 .nav-bg.is-expanded {
     height: var(--panel-h);
-    /* больше чем в 2 раза относительно 56px */
-    background: #232323;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    /* отключаем фон и тень, чтобы не было широкой тёмной полосы под шапкой */
+    background: transparent;
+    box-shadow: none;
 }
 
 /* Внутреннее содержимое шапки всегда поверх фона */
