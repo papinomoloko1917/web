@@ -1,4 +1,6 @@
 <template>
+
+    <Head title="Главная" />
     <Hero />
     <Competencies />
     <License />
@@ -6,10 +8,11 @@
     <OurProjects />
     <Connection />
     <Map />
-    
+
 </template>
 
 <script setup>
+import { Head } from '@inertiajs/vue3'
 import Hero from './MainSections/Hero.vue'
 import Competencies from './MainSections/Competencies.vue'
 import License from './MainSections/License.vue'

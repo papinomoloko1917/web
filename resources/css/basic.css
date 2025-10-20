@@ -4,7 +4,8 @@
 
 }
 
-.app-container {
+.app-container,
+.container-custom {
     width: 100%;
     max-width: 1440px;
     /* нужная ширина */
@@ -29,9 +30,18 @@ main {
     padding: 32px 0;
 }
 
+/* Принудительно показываем вертикальный скроллбар для предотвращения сдвига */
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+}
+
 /* Глобальный фон для всех страниц */
 body {
     background-color: var(--page-bg);
     color-scheme: light;
     transition: background-color .25s ease;
+    overflow-x: hidden;
+    width: 100%;
 }

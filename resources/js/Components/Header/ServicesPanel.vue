@@ -81,7 +81,8 @@ export default {
 .nav-panel.is-expanded {
     height: var(--panel-h);
     pointer-events: auto;
-    background: #232323; /* чёрный фон у самой панели */
+    background: #232323;
+    /* чёрный фон у самой панели */
 }
 
 .panel-inner {

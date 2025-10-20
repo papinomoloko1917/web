@@ -1,14 +1,6 @@
 <template>
-  <section class="relative mt-20 pt-12 lg:pt-12 border-t border-gray-700 text-gray-300" data-projects-section
-    style="background:#232323; box-shadow: 0 0 0 100vmax #232323; clip-path: inset(0 -100vmax);">
-    <div class="relative z-10 text-center mb-8">
-      <h2 id="services-heading"
-        class="font-montserrat text-3xl md:text-4xl lg:text-4xl font-extrabold text-gray-200 mb-2 transition-[transform,opacity] duration-[880ms] ease-[cubic-bezier(.2,.6,.2,1)] opacity-0 translate-y-3 will-change-transform will-change-opacity"
-        data-delay="0">
-        НАШИ ПРОЕКТЫ
-      </h2>
-    </div>
-
+  <section class="relative mt-8 md:mt-12 lg:mt-20 pt-12 lg:pt-12 border-t border-gray-700 text-gray-300"
+    data-projects-section style="background:#232323; box-shadow: 0 0 0 100vmax #232323; clip-path: inset(0 -100vmax);">
     <div class="relative z-10 pt-5 pb-16">
       <div class="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <div class="mb-15 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-14">
@@ -42,18 +34,6 @@
               <p class="text-gray-200 mt-3 text-sm md:text-base">{{ card.description }}</p>
             </div>
           </article>
-        </div>
-
-        <div class="mt-8">
-          <Link href="/projects"
-            class="projects-more-link font-monserrat w-full py-2 font-semibold text-start text-2xl md:text-3xl lg:text-4xl text-gray-200 border-b-2 border-white/70 rounded-none transition-colors duration-300 hover:text-blue-500 hover:border-blue-500 flex items-center justify-between">
-          <span>БОЛЬШЕ ПРОЕКТОВ</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 flex-shrink-0 w-10 h-10 md:w-15 md:h-15 project-arrow"
-            viewBox="0 0 512 512" aria-hidden="true" focusable="false">
-            <path fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="60"
-              d="M268 112l144 144-144 144M392 256H100" />
-          </svg>
-          </Link>
         </div>
       </div>
     </div>
@@ -260,59 +240,6 @@ onMounted(() => {
 @supports (overflow: clip) {
   [data-projects-section] {
     overflow-x: clip;
-  }
-}
-
-/* Кнопка "Больше проектов" — анимации */
-.project-arrow {
-  transform-origin: center;
-  transform-box: fill-box;
-  transform: rotate(45deg);
-  transition: transform 320ms cubic-bezier(.2, .7, .2, 1);
-  will-change: transform;
-}
-
-.projects-more-link:hover .project-arrow,
-.projects-more-link:focus .project-arrow,
-.projects-more-link:focus-visible .project-arrow {
-  transform: rotate(0deg);
-}
-
-.projects-more-link {
-  position: relative;
-  z-index: 1;
-  overflow: visible;
-}
-
-.projects-more-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 3px;
-  background: #3b82f6;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 780ms cubic-bezier(.2, .8, .2, 1);
-  pointer-events: none;
-  z-index: 0;
-  border-radius: 0;
-}
-
-.projects-more-link:hover::after,
-.projects-more-link:focus::after,
-.projects-more-link:focus-visible::after {
-  transform: scaleX(1);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .project-arrow {
-    transition: none;
-  }
-
-  .projects-more-link::after {
-    transition: none;
   }
 }
 </style>

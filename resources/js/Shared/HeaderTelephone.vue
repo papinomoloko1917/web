@@ -1,6 +1,6 @@
 <template>
     <a :href="`tel:${tel}`" aria-label="Позвонить"
-        class="header-telephone font-semibold hidden lg:flex items-center gap-0 rounded-4xl overflow-hidden px-3 py-1 cursor-pointer transition-all duration-400 hover:rounded-none"
+        class="header-telephone font-semibold hidden lg:flex items-center gap-0 rounded-4xl overflow-hidden px-3 py-2 cursor-pointer transition-all duration-400 hover:rounded-none"
         :class="expanded ? 'bg-gray-300 text-gray-800' : 'bg-blue-600 text-gray-200'">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
             class="size-6 no-invert" aria-hidden="true">

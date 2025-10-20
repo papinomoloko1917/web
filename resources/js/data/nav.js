@@ -10,7 +10,7 @@ export const servicesLinks = [
 ];
 
 export const topLinks = [
-    { label: 'О нас', href: '#' },
-    { label: 'Проекты', href: '#' },
-    { label: 'Контакты', href: '#' },
+    { label: 'Главная', href: '/' },
+    { label: 'Проекты', href: '/projects' },
+    { label: 'О нас', href: '/about' },
 ];

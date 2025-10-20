@@ -3,38 +3,39 @@
         <div class="relative min-h-[28rem] sm:min-h-[32rem] md:min-h-[48rem] lg:min-h-0 w-full lg:max-w-[1440px] lg:mx-auto lg:px-6"
             :class="['lg:grid lg:grid-cols-12 lg:gap-10 lg:items-stretch', isVisible ? 'is-visible' : '']">
             <!-- Текст -->
-            <div ref="textColRef" class="relative z-10 lg:z-auto lg:col-span-6 px-4 sm:px-6 lg:px-0 pt-[28rem] sm:pt-[32rem] md:pt-[48rem] lg:pt-0">
+            <div ref="textColRef"
+                class="relative z-10 lg:z-auto lg:col-span-6 px-4 sm:px-6 lg:px-0 pt-[28rem] sm:pt-[32rem] md:pt-[48rem] lg:pt-0">
                 <!-- Десктопный заголовок слева -->
-                <h1 class="hidden lg:block font-montserrat text-4xl sm:text-4xl md:text-7xl font-extrabold leading-tight text-gray-900 hero-title">
-                    <span class="block text-gray-800 transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">Проектируем,</span>
-                    <span class="block text-gray-800 transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">монтируем&nbsp;и</span>
-                    <span class="block text-gray-800 transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">сопровождаем</span>
-                    <span class="block text-blue-600 transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">инженерные</span>
-                    <span class="block text-blue-600 transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">системы</span>
+                <h1
+                    class="hidden lg:block font-montserrat text-4xl sm:text-4xl md:text-7xl font-extrabold leading-tight text-gray-900 hero-title">
+                    <span
+                        class="block text-gray-800 transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">Проектируем,</span>
+                    <span
+                        class="block text-gray-800 transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">монтируем&nbsp;и</span>
+                    <span
+                        class="block text-gray-800 transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">сопровождаем</span>
+                    <span
+                        class="block text-blue-600 transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">инженерные</span>
+                    <span
+                        class="block text-blue-600 transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">системы</span>
                 </h1>
 
-                <h2
-                    class="text-lg font-semibold md:text-3xl text-gray-800 lg:text-gray-600 mb-1 py-2">
+                <h2 class="text-lg font-semibold md:text-3xl text-gray-800 lg:text-gray-600 mb-1 py-2">
                     в городе Приморско-Ахтарск и по всему Краснодарскому краю
                 </h2>
 
-                <p
-                    class="text-md md:text-lg text-gray-800 lg:text-gray-600 mb-4">
+                <p class="text-md md:text-lg text-gray-800 lg:text-gray-600 mb-4">
                     Производство работ по проектированию, монтажу и обслуживанию электроснабжения, электрооборудования,
                     противопожарной автоматики, охранных систем, видеонаблюдения, СКУД, домофонии, вентиляции и
                     кондиционирования.
                 </p>
 
-                <div
-                    class="flex flex-wrap gap-3 py-5 items-center">
-                    <a href="tel:+79282547147"
-                        class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 bg-blue-600 text-white text-md font-semibold rounded-4xl hover:rounded-none transition-all duration-300 shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        aria-label="Позвонить для расчета проекта">Рассчитать проект</a>
+                <div class="flex flex-wrap gap-3 py-2 items-center">
+                    <CallToActionButton text="Рассчитать проект" />
                 </div>
 
                 <!-- доверие / быстрые факты -->
-                <div
-                    class="mt-5 flex flex-wrap gap-6 text-sm text-gray-700 lg:text-gray-600 hero-sub">
+                <div class="mt-3 lg:mt-5 flex flex-wrap gap-6 text-sm text-gray-700 lg:text-gray-600 hero-sub">
                     <div class="flex items-center gap-3">
                         <strong class="text-gray-900"><span ref="counterYears">0</span>+</strong>
                         <span>лет опыта</span>
@@ -47,10 +48,13 @@
             </div>
 
             <!-- Карусель фото справа -->
-            <div class="absolute top-0 left-0 right-0 pointer-events-none lg:relative lg:pointer-events-auto lg:col-span-6 flex justify-center lg:mx-0">
+            <div
+                class="absolute top-0 left-0 right-0 pointer-events-none lg:relative lg:pointer-events-auto lg:col-span-6 flex justify-center lg:mx-0">
                 <div ref="cardRef" :style="desktopCardStyle"
                     :class="['hero-card relative w-screen lg:w-full h-[28rem] sm:h-[32rem] md:h-[48rem] lg:h-full lg:max-w-full rounded-none overflow-hidden shadow-lg bg-gray-100', isVisible ? 'opacity-100' : 'opacity-0']">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent lg:from-black/10 lg:via-transparent lg:to-transparent pointer-events-none"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent lg:from-black/10 lg:via-transparent lg:to-transparent pointer-events-none">
+                    </div>
 
                     <div class="hero-carousel relative w-full h-full">
                         <img v-for="(src, idx) in images" :key="src" :src="src" :alt="alts[idx] || 'hero'"
@@ -59,24 +63,23 @@
                     </div>
 
                     <!-- Мобильный/планшетный заголовок поверх фото -->
-                                        <div class="absolute inset-x-0 bottom-0 px-1.5 py-0 sm:px-6 sm:py-0 lg:hidden">
-                                                <!-- Бегущая строка с отдельным фоном -->
-                                                <div class="bg-black/50 sm:bg-black/50 backdrop-blur-sm rounded-lg sm:rounded-xl mb-8 sm:mb-8 mx-1.5 sm:mx-0 overflow-hidden">
-                                                    <MarqueeHeadline
-                                                        :items="['ПРОЕКТИРУЕМ', 'МОНТИРУЕМ', 'СОПРОВОЖДАЕМ']"
-                                                        :speed="86"
-                                                        container-class="w-full py-1"
-                                                        chip-class="inline-block"
-                                                        text-class="font-montserrat text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] tracking-wide uppercase"
-                                                    />
-                                                </div>
+                    <div class="absolute inset-x-0 bottom-0 px-1.5 py-0 sm:px-6 sm:py-0 lg:hidden">
+                        <!-- Бегущая строка с отдельным фоном -->
+                        <div
+                            class="bg-black/50 sm:bg-black/50 backdrop-blur-sm rounded-lg sm:rounded-xl mb-8 sm:mb-8 mx-1.5 sm:mx-0 overflow-hidden">
+                            <MarqueeHeadline :items="['ПРОЕКТИРУЕМ', 'МОНТИРУЕМ', 'СОПРОВОЖДАЕМ']" :speed="86"
+                                container-class="w-full py-1" chip-class="inline-block"
+                                text-class="font-montserrat text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] tracking-wide uppercase" />
+                        </div>
 
-                                                <!-- Статичный синий текст с отдельными фонами -->
-                                                <div class="flex flex-col gap-2 sm:gap-2.5 mx-1.5 sm:mx-0">
-                                                    <span class="inline-block self-start bg-black/50 sm:bg-black/60 backdrop-blur-sm rounded-lg sm:rounded-xl px-2 sm:px-3 py-1 sm:py-1.5 font-montserrat text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-blue-400 drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] tracking-wide uppercase hero-title-span transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">инженерные</span>
-                                                    <span class="inline-block self-start bg-black/50 sm:bg-black/60 backdrop-blur-sm rounded-lg sm:rounded-xl px-2 sm:px-3 py-1 sm:py-1.5 font-montserrat text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-blue-400 drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] tracking-wide uppercase hero-title-span transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">системы</span>
-                                                </div>
-                                        </div>
+                        <!-- Статичный синий текст с отдельными фонами -->
+                        <div class="flex flex-col gap-2 sm:gap-2.5 mx-1.5 sm:mx-0">
+                            <span
+                                class="inline-block self-start bg-black/50 sm:bg-black/60 backdrop-blur-sm rounded-lg sm:rounded-xl px-2 sm:px-3 py-1 sm:py-1.5 font-montserrat text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-blue-400 drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] tracking-wide uppercase hero-title-span transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">инженерные</span>
+                            <span
+                                class="inline-block self-start bg-black/50 sm:bg-black/60 backdrop-blur-sm rounded-lg sm:rounded-xl px-2 sm:px-3 py-1 sm:py-1.5 font-montserrat text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-blue-400 drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] tracking-wide uppercase hero-title-span transform -translate-y-6 opacity-0 transition-all duration-700 ease-out">системы</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,6 +90,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick, computed } from 'vue'
 import MarqueeHeadline from './Partials/MarqueeHeadline.vue'
+import CallToActionButton from '../../Components/CallToActionButton.vue'
 
 const images = [
     '/images/Hero_section_main/видеонаблюдение.jpg',
@@ -261,7 +265,9 @@ onBeforeUnmount(() => {
 
 /* На мобильных фон-карусель заполняет секцию, высота секции определяется контентом */
 /* Старая высота .h-116 больше не используется (заменили на h-full в фоне) */
-.h-116 { height: 29rem; }
+.h-116 {
+    height: 29rem;
+}
 
 .hero-card:hover {
     cursor: default;

@@ -6,6 +6,7 @@ import { InertiaProgress } from "@inertiajs/progress";
 import DefaultLayout from "./Layouts/PublicLayout.vue";
 
 createInertiaApp({
+    title: (title) => title ? `${title} | ИП Варивода` : 'ИП Варивода - Инженерные системы',
     resolve: (name) => {
         const pages = import.meta.glob("./Pages/**/*.vue", { eager: true });
         const page = pages[`./Pages/${name}.vue`];
@@ -24,4 +25,9 @@ createInertiaApp({
     },
 });
 
-InertiaProgress.init();
+InertiaProgress.init({
+    delay: 250,
+    color: '#2563eb',
+    includeCSS: true,
+    showSpinner: false,
+});

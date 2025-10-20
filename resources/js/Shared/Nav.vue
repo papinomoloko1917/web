@@ -107,7 +107,7 @@ export default {
             if (!scope) return;
             if (isHover) {
                 scope.classList.add('is-hovering');
-                const trigger = scope.querySelector('.menu-link');
+                const trigger = scope.querySelector('.services-trigger');
                 trigger && (trigger.classList.add('no-dim'), trigger.classList.add('is-current'));
             } else {
                 scope.classList.remove('is-hovering');
@@ -119,7 +119,7 @@ export default {
             const scope = this.$refs.desktop?.getTopScope?.() || null;
             if (!scope) return;
             scope.querySelectorAll('.menu-link').forEach(el => el.classList.remove('is-current'));
-            const trigger = scope.querySelector('.menu-link');
+            const trigger = scope.querySelector('.services-trigger');
             trigger && trigger.classList.add('is-current');
         },
         onPanelLinkLeave() {
@@ -138,7 +138,8 @@ export default {
     min-height: var(--nav-h);
     overflow: visible;
     --nav-h: 72px;
-    --panel-h: 90px; /* ещё на ~20% меньше от 112px */
+    --panel-h: 90px;
+    /* ещё на ~20% меньше от 112px */
     /* плавное наращивание высоты контейнера, чтобы толкать контент вниз */
     transition: min-height .42s cubic-bezier(.22, 1, .36, 1);
 }

@@ -17,11 +17,16 @@
         </button>
 
         <!-- Меню -->
-        <div id="mobile-menu"
-            class="mobile-menu lg:hidden fixed top-[var(--nav-h)] left-0 right-0 h-[calc(100vh-var(--nav-h))]"
-            :class="{ 'is-open': isOpen }">
+        <div id="mobile-menu" class="mobile-menu lg:hidden fixed left-0 right-0" :class="{ 'is-open': isOpen }"
+            :style="{ top: menuTop + 'px', height: `calc(100vh - ${menuTop}px)` }">
             <div class="mobile-menu__panel shadow-md">
                 <div class="px-4 py-5 flex flex-col gap-1 text-gray-100">
+                    <!-- Главная -->
+                    <Link v-if="top[0]" :href="top[0].href"
+                        class="no-underline transition-colors text-xl duration-200 hover:text-blue-600 focus:text-blue-600 py-1"
+                        @click="closeMenu">
+                    {{ top[0].label }}</Link>
+
                     <!-- Услуги: dropdown -->
                     <button type="button"
                         class="flex items-center justify-between w-full no-underline transition-colors text-xl duration-200 hover:text-blue-600 focus:text-blue-600 py-1 cursor-pointer"
@@ -38,15 +43,19 @@
                     <div id="mobile-services" class="mobile-submenu" :class="{ 'is-open': isServicesOpen }">
                         <ul class="pl-3 flex flex-col gap-2">
                             <li v-for="link in services" :key="link.href">
-                                <a :href="link.href"
-                                    class="no-underline transition-colors text-xl duration-200 hover:text-blue-600 focus:text-blue-600">{{
-                                        link.label }}</a>
+                                <Link :href="link.href"
+                                    class="no-underline transition-colors text-xl duration-200 hover:text-blue-600 focus:text-blue-600"
+                                    @click="closeMenu">
+                                {{ link.label }}</Link>
                             </li>
                         </ul>
                     </div>
-                    <a v-for="l in top" :key="l.label" :href="l.href"
-                        class="mt-2 no-underline transition-colors text-xl duration-200 hover:text-blue-600 focus:text-blue-600">{{
-                            l.label }}</a>
+
+                    <!-- Остальные верхние ссылки -->
+                    <Link v-for="l in top.slice(1)" :key="l.label" :href="l.href"
+                        class="no-underline transition-colors text-xl duration-200 hover:text-blue-600 focus:text-blue-600 py-1"
+                        @click="closeMenu">
+                    {{ l.label }}</Link>
                 </div>
             </div>
         </div>
@@ -54,9 +63,11 @@
 </template>
 
 <script>
+import { Link } from '@inertiajs/vue3';
 import { servicesLinks, topLinks } from '../data/nav.js';
 export default {
     name: 'MobileNav',
+    components: { Link },
     props: {
         isOpen: { type: Boolean, default: false }
     },
@@ -64,7 +75,8 @@ export default {
         return {
             isServicesOpen: false,
             services: servicesLinks,
-            top: topLinks
+            top: topLinks,
+            menuTop: 0
         };
     },
     watch: {
@@ -75,13 +87,35 @@ export default {
             } catch (e) { /* noop */ }
         }
     },
+    mounted() {
+        this.calculateMenuTop();
+        window.addEventListener('resize', this.calculateMenuTop);
+        window.addEventListener('scroll', this.calculateMenuTop);
+    },
     beforeUnmount() {
         // На всякий случай возвращаем прокрутку
         try { document.documentElement.style.overflow = ''; } catch (e) { /* noop */ }
+        window.removeEventListener('resize', this.calculateMenuTop);
+        window.removeEventListener('scroll', this.calculateMenuTop);
     },
     methods: {
         toggleServices() {
             this.isServicesOpen = !this.isServicesOpen;
+        },
+        closeMenu() {
+            // Закрываем меню при клике на ссылку
+            this.$emit('toggle');
+        },
+        calculateMenuTop() {
+            // Вычисляем позицию под MobileContactBar
+            const contactBar = document.querySelector('.mobile-contact-bar');
+            if (contactBar) {
+                const rect = contactBar.getBoundingClientRect();
+                this.menuTop = rect.bottom;
+            } else {
+                // Фолбэк на высоту навбара если контактбар не найден
+                this.menuTop = 72; // var(--nav-h)
+            }
         }
     }
 };
@@ -90,14 +124,13 @@ export default {
 <style scoped>
 .mobile-menu {
     position: fixed;
-    top: var(--nav-h);
     left: 0;
     right: 0;
     bottom: 0;
     overflow: hidden;
     /* внутренняя панель уезжает без появления горизонтального скролла */
-    z-index: 40;
-    /* выше nav-bg (0) и на уровне nav-inner (30) */
+    z-index: 35;
+    /* ниже MobileContactBar (40), но выше nav-inner (30) */
     pointer-events: none;
     /* клики блокируем, пока закрыто */
 }
