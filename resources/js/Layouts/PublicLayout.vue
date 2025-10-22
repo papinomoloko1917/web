@@ -74,12 +74,10 @@ onMounted(() => {
 
 <style scoped>
 .layout-root {
-  overflow-x: hidden;
   width: 100%;
 }
 
 .content-wrapper {
-  overflow-x: hidden;
   width: 100%;
 }
 </style>

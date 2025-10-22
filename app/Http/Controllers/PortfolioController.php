@@ -14,4 +14,12 @@ class PortfolioController extends Controller
     {
         return Inertia::render('Portfolio/GalleryOfTaste');
     }
+
+    /**
+     * Display the NESK project page.
+     */
+    public function nesk(): Response
+    {
+        return Inertia::render('Portfolio/NESK');
+    }
 }

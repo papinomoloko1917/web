@@ -81,6 +81,10 @@ export default {
     },
     watch: {
         isOpen(val) {
+            // Прокручиваем страницу вверх при открытии меню
+            if (val) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
             // Блокируем прокрутку страницы, когда меню открыто
             try {
                 document.documentElement.style.overflow = val ? 'hidden' : '';

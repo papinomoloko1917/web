@@ -63,7 +63,7 @@ const cards = [
   {
     title: 'НЕЗАВИСИМАЯ ЭНЕРГОСБЫТОВАЯ КОМПАНИЯ "НЭСК"',
     description: 'Офис компании, занимающейся поставками электроэнергии.',
-    href: '#',
+    href: '/portfolio/nesk',
     image: '/images/our_projects/nesk/1.jpg',
     alt: 'НЭСК',
     objectPosition: '10% 10%',

@@ -1,17 +1,17 @@
 <template>
-    <div class="relative w-full h-full select-none overflow-hidden rounded-lg shadow-xl" ref="containerRef"
-        @mousedown="startDrag" @touchstart="startDrag">
+    <div class="relative w-full h-full select-none overflow-hidden shadow-2xl" ref="containerRef" @mousedown="startDrag"
+        @touchstart="startDrag">
 
-        <!-- Изображение "после" (всегда видно полностью, но обрезается overlay) -->
+        <!-- Изображение "после" (правое, всегда видно полностью) -->
         <div class="absolute inset-0">
             <img :src="imageAfter" :alt="altAfter" class="w-full h-full object-cover" draggable="false" loading="lazy">
         </div>
 
-        <!-- Изображение "до" (обрезается по ширине слайдера) -->
-        <div class="absolute inset-0 overflow-hidden" :style="{ width: sliderPosition + '%' }">
+        <!-- Изображение "до" (левое, обрезается по ширине слайдера) -->
+        <div class="absolute inset-0 overflow-hidden" :style="{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }">
             <img :src="imageBefore" :alt="altBefore"
-                class="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                :style="{ width: containerWidth + 'px' }" draggable="false" loading="lazy">
+                class="absolute inset-0 w-full h-full object-cover pointer-events-none" draggable="false"
+                loading="lazy">
         </div>
 
         <!-- Вертикальная линия-разделитель -->
@@ -82,7 +82,6 @@ const props = defineProps({
 
 const containerRef = ref(null);
 const sliderPosition = ref(props.initialPosition);
-const containerWidth = ref(0);
 const isDragging = ref(false);
 
 const updateSliderPosition = (clientX) => {
@@ -118,16 +117,7 @@ const stopDrag = () => {
     isDragging.value = false;
 };
 
-const updateContainerWidth = () => {
-    if (containerRef.value) {
-        containerWidth.value = containerRef.value.offsetWidth;
-    }
-};
-
 onMounted(() => {
-    updateContainerWidth();
-    window.addEventListener('resize', updateContainerWidth);
-
     // Глобальные слушатели для перетаскивания
     document.addEventListener('mousemove', onDrag);
     document.addEventListener('mouseup', stopDrag);
@@ -136,7 +126,6 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-    window.removeEventListener('resize', updateContainerWidth);
     document.removeEventListener('mousemove', onDrag);
     document.removeEventListener('mouseup', stopDrag);
     document.removeEventListener('touchmove', onDrag);

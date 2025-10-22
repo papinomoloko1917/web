@@ -2,7 +2,7 @@
   <section id="where-to-find" class="pt-10 pb-6 sm:pt-16 sm:pb-8 lg:pt-16 lg:pb-0">
     <div class="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
       <h2 data-reveal data-reveal-delay="0"
-          class="text-center font-montserrat text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+        class="text-center font-montserrat text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
         ГДЕ МЫ НАХОДИМСЯ
       </h2>
 
@@ -11,17 +11,22 @@
           <!-- Правая колонка: карта -->
           <div class="lg:col-span-9">
             <div class="map-wrapper relative" data-reveal data-reveal-delay="160">
-              <div id="yandex-map" class="w-full h-80 md:h-[28rem] lg:h-[32rem] overflow-hidden shadow-lg bg-gray-100"></div>
+              <div id="yandex-map" class="w-full h-80 md:h-[28rem] lg:h-[32rem] overflow-hidden shadow-lg bg-gray-100">
+              </div>
               <noscript>
-                <p class="mt-4 text-sm text-gray-600">Для просмотра карты включите JavaScript. Наш адрес: Краснодарский край, город Приморско-Ахтарск, ул. Комсомольская, 66.</p>
+                <p class="mt-4 text-sm text-gray-600">Для просмотра карты включите JavaScript. Наш адрес: Краснодарский
+                  край, город Приморско-Ахтарск, ул. Комсомольская, 66.</p>
               </noscript>
             </div>
-            <div class="mt-6 lg:mt-8">
+            <div class="mt-6 lg:mt-8 lg:pb-8">
               <button id="map-build-route" type="button"
-                      class="inline-flex items-center justify-center w-full lg:w-auto px-6 lg:px-8 py-4 bg-blue-600 text-white text-md lg:text-lg font-semibold rounded-4xl hover:rounded-none transition-all duration-300 shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer text-center">
+                class="inline-flex items-center justify-center w-full lg:w-auto px-6 lg:px-8 py-4 bg-blue-600 text-white text-md lg:text-lg font-semibold rounded-4xl hover:rounded-none transition-all duration-300 shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer text-center">
                 Построить маршрут
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-icon lucide-map ml-3 md:ml-2 flex-shrink-0 relative top-0.5">
-                  <path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-map-icon lucide-map ml-3 md:ml-2 flex-shrink-0 relative top-0.5">
+                  <path
+                    d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" />
                   <path d="M15 5.764v15" />
                   <path d="M9 3.236v15" />
                 </svg>
@@ -30,7 +35,8 @@
           </div>
           <!-- Левая колонка: адрес, график -->
           <div class="lg:col-span-3">
-            <div class="p-4 lg:p-6 h-full flex flex-col justify-between border border-gray-700" data-reveal data-reveal-delay="120">
+            <div class="p-4 lg:p-6 h-full flex flex-col justify-between border border-gray-700" data-reveal
+              data-reveal-delay="120">
               <dl class="grid grid-cols-1 gap-6">
                 <div>
                   <dt class="text-2xl font-semibold uppercase tracking-wide text-gray-800">АДРЕС</dt>
@@ -38,7 +44,8 @@
                 </div>
                 <div>
                   <dt class="text-2xl font-semibold uppercase tracking-wide text-gray-800">ГРАФИК РАБОТЫ</dt>
-                  <dd class="mt-1 text-gray-900">8:00 — 17:00<br><span class="text-gray-600">Выходные дни: Сб–Вс</span></dd>
+                  <dd class="mt-1 text-gray-900">8:00 — 17:00<br><span class="text-gray-600">Выходные дни: Сб–Вс</span>
+                  </dd>
                 </div>
               </dl>
             </div>
@@ -120,7 +127,7 @@ function loadApiAndInit() {
   s.src = `https://api-maps.yandex.ru/2.1/?apikey=${API_KEY}&lang=ru_RU`
   s.async = true
   s.onload = initMapOnce
-  s.onerror = () => {}
+  s.onerror = () => { }
   document.head.appendChild(s)
 }
 
@@ -166,21 +173,33 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  try { revealObserver && revealObserver.disconnect() } catch {}
+  try { revealObserver && revealObserver.disconnect() } catch { }
 })
 </script>
 
 <style scoped>
 @media (hover: hover) and (min-width: 1024px) {
-  #yandex-map { filter: grayscale(100%); pointer-events: none; transition: filter 300ms cubic-bezier(.2,.7,.2,1); }
-  .map-wrapper:hover #yandex-map { filter: none; pointer-events: auto; }
+  #yandex-map {
+    filter: grayscale(100%);
+    pointer-events: none;
+    transition: filter 300ms cubic-bezier(.2, .7, .2, 1);
+  }
+
+  .map-wrapper:hover #yandex-map {
+    filter: none;
+    pointer-events: auto;
+  }
 }
 
 #where-to-find [data-reveal] {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1);
+  transition: opacity 700ms cubic-bezier(.2, .7, .2, 1), transform 700ms cubic-bezier(.2, .7, .2, 1);
   will-change: opacity, transform;
 }
-#where-to-find [data-reveal].revealed { opacity: 1; transform: none; }
+
+#where-to-find [data-reveal].revealed {
+  opacity: 1;
+  transform: none;
+}
 </style>
