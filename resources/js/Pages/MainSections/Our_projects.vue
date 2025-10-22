@@ -98,7 +98,7 @@ const cards = [
   {
     title: 'ДИНАСТИЯ',
     description: 'Ресторанно-гостиничный комплекс.',
-    href: '#',
+    href: '/portfolio/dynasty',
     image: '/images/our_projects/caplya/1.jpg',
     alt: 'ДИНАСТИЯ',
     objectPosition: '10% 70%',
@@ -113,7 +113,7 @@ const cards = [
   {
     title: 'КФХ',
     description: 'Крестьянско-фермерское хозяйство.',
-    href: '#',
+    href: '/portfolio/kfh',
     image: '/images/our_projects/kfh_loza/1.jpg',
     alt: 'КФХ',
     objectPosition: '10% 40%',

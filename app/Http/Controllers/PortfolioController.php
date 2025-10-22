@@ -22,4 +22,20 @@ class PortfolioController extends Controller
     {
         return Inertia::render('Portfolio/NESK');
     }
+
+    /**
+     * Display the Dynasty project page.
+     */
+    public function dynasty(): Response
+    {
+        return Inertia::render('Portfolio/Dynasty');
+    }
+
+    /**
+     * Display the KFH project page.
+     */
+    public function kfh(): Response
+    {
+        return Inertia::render('Portfolio/KFH');
+    }
 }

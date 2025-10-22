@@ -15,6 +15,8 @@ Route::get('/projects', [ProjectsController::class, 'index'])->name('projects.in
 // Страницы портфолио
 Route::get('/portfolio/gallery-of-taste', [PortfolioController::class, 'galleryOfTaste'])->name('portfolio.gallery-of-taste');
 Route::get('/portfolio/nesk', [PortfolioController::class, 'nesk'])->name('portfolio.nesk');
+Route::get('/portfolio/dynasty', [PortfolioController::class, 'dynasty'])->name('portfolio.dynasty');
+Route::get('/portfolio/kfh', [PortfolioController::class, 'kfh'])->name('portfolio.kfh');
 
 // Страница "О компании"
 Route::get('/about', [AboutController::class, 'index'])->name('about.index');
