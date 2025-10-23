@@ -39,7 +39,7 @@
 
         <!-- Сравнение моделей -->
         <div class="container-custom">
-            <div class="w-full h-[400px] md:h-[700px]">
+            <div class="w-full h-[400px] md:h-[600px]">
                 <ImageComparisonSlider :image-before="imageBefore" :image-after="imageAfter"
                     alt-before="3D-модель с светотехническим расчетом" alt-after="Реализованное освещение фасада"
                     label-before="Модель DIALux" label-after="Реализация" :initial-position="50" />

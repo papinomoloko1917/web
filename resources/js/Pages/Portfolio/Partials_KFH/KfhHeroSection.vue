@@ -38,7 +38,7 @@
         </div>
 
         <!-- Hero изображение -->
-        <div data-reveal data-delay="200" class="relative mb-0 h-[500px] md:h-[600px] lg:h-[900px] w-full">
+        <div data-reveal data-delay="200" class="relative mb-0 h-[500px] md:h-[600px] lg:h-[800px] w-full">
             <img :src="mainImage" :alt="`${projectName} - главное изображение`"
                 class="absolute inset-0 w-full h-full object-cover shadow-2xl" loading="eager">
 
