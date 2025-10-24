@@ -1,5 +1,5 @@
 <template>
-    <section ref="rootRef" class="-mt-8 pt-0 lg:mt-0 lg:pt-20 overflow-x-hidden">
+    <section ref="rootRef" class="-mt-8 pt-0 lg:mt-0 lg:pt-28 overflow-x-hidden">
         <div class="relative min-h-[28rem] sm:min-h-[32rem] md:min-h-[48rem] lg:min-h-0 w-full lg:max-w-[1440px] lg:mx-auto lg:px-6"
             :class="['lg:grid lg:grid-cols-12 lg:gap-10 lg:items-stretch', isVisible ? 'is-visible' : '']">
             <!-- Текст -->

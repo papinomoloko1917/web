@@ -107,7 +107,7 @@ const cards = [
   {
     title: 'МАОУ СОШ № 1',
     description: 'Муниципальное автономное общеобразовательно учреждение средняя общеобразовательная школа № 1 имени А. Ф. Крамаренко.',
-    href: '#',
+    href: '/portfolio/sosh-1',
     image: '/images/our_projects/SOSH_1/СОШ_1.jpeg',
     alt: 'МАОУ СОШ № 1',
     objectPosition: '100% 0%',

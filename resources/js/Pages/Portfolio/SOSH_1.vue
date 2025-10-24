@@ -1,6 +1,6 @@
 <template>
 
-    <Head title="Dynasty - Проект" />
+    <Head title="МБОУ СОШ №1 - Проект" />
 
     <HeroSection :main-image="projectImages.main" :services="services" />
 
@@ -17,9 +17,9 @@
 <script setup>
 import { Head } from '@inertiajs/vue3';
 import { onMounted } from 'vue';
-import HeroSection from './Partials_Dynasty/HeroSection.vue';
-import AboutProjectSection from './Partials_Dynasty/AboutProjectSection.vue';
-import PhotoGallerySection from './Partials_Dynasty/PhotoGallerySection.vue';
+import HeroSection from './Partials_SOSH_1/HeroSection.vue';
+import AboutProjectSection from './Partials_SOSH_1/AboutProjectSection.vue';
+import PhotoGallerySection from './Partials_SOSH_1/PhotoGallerySection.vue';
 import Connection from '../MainSections/Connection.vue';
 import Map from '../MainSections/Map.vue';
 
@@ -28,25 +28,27 @@ const services = [
     'Электромонтаж',
     'Интернет',
     'Видеонаблюдение',
-    'Архитектурное освещение',
-    'Пожарная автоматика'
+    'Пожарная автоматика',
+    'Система оповещения'
 ];
 
 const projectImages = {
-    main: '/images/our_projects/caplya/1.jpg',
+    main: '/images/our_projects/SOSH_1/1.jpg',
     gallery: [
-        '/images/our_projects/caplya/2.jpg',
-        '/images/our_projects/caplya/3.jpg'
+        '/images/our_projects/SOSH_1/2.jpg',
+        '/images/our_projects/SOSH_1/3.jpg'
     ]
 };
 
 const galleryImages = [
-    { src: '/images/our_projects/caplya/2.jpg', alt: 'Dynasty - фото 2' },
-    { src: '/images/our_projects/caplya/3.jpg', alt: 'Dynasty - фото 3' },
-    { src: '/images/our_projects/caplya/4.jpg', alt: 'Dynasty - фото 4' },
-    { src: '/images/our_projects/caplya/5.jpg', alt: 'Dynasty - фото 5' },
-    { src: '/images/our_projects/caplya/6.jpg', alt: 'Dynasty - фото 6' },
-    { src: '/images/our_projects/caplya/7.jpg', alt: 'Dynasty - фото 7' }
+    { src: '/images/our_projects/SOSH_1/2.jpg', alt: 'МБОУ СОШ №1 - фото 2' },
+    { src: '/images/our_projects/SOSH_1/3.jpg', alt: 'МБОУ СОШ №1 - фото 3' },
+    { src: '/images/our_projects/SOSH_1/4.jpg', alt: 'МБОУ СОШ №1 - фото 4' },
+    { src: '/images/our_projects/SOSH_1/5.jpg', alt: 'МБОУ СОШ №1 - фото 5' },
+    { src: '/images/our_projects/SOSH_1/6.jpg', alt: 'МБОУ СОШ №1 - фото 6' },
+    { src: '/images/our_projects/SOSH_1/7.jpg', alt: 'МБОУ СОШ №1 - фото 7' },
+    { src: '/images/our_projects/SOSH_1/8.jpg', alt: 'МБОУ СОШ №1 - фото 8' },
+    { src: '/images/our_projects/SOSH_1/9.jpg', alt: 'МБОУ СОШ №1 - фото 9' }
 ];
 
 onMounted(() => {

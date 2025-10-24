@@ -38,9 +38,10 @@
         </div>
 
         <!-- Hero изображение -->
-        <div data-reveal data-delay="200" class="relative mb-0 h-[500px] md:h-[600px] lg:h-[800px] w-full">
+        <div data-reveal data-delay="200"
+            class="relative mb-0 h-[500px] md:h-[600px] lg:h-[800px] w-full overflow-hidden">
             <img :src="mainImage" :alt="`${projectName} - главное изображение`"
-                class="absolute inset-0 w-full h-full object-cover shadow-2xl" loading="eager">
+                class="absolute inset-0 w-full h-full object-cover shadow-2xl hero-image" loading="eager">
 
             <!-- Градиентный оверлей -->
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
@@ -92,3 +93,14 @@ defineProps({
     }
 });
 </script>
+
+<style scoped>
+.hero-image {
+    object-position: center 30%;
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.18);
+}
+</style>

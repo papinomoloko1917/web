@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div class="container-custom py-0 pt-10 lg:pt-20">
+        <div class="container-custom py-0 pt-10 lg:pt-28">
             <div class="items-start">
                 <!-- ЛЕВАЯ КОЛОНКА: текст -->
                 <div class="w-full">

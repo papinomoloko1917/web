@@ -85,6 +85,18 @@ export default {
     /* чёрный фон у самой панели */
 }
 
+/* На мобильных устройствах панель всегда скрыта */
+@media (max-width: 1023px) {
+
+    .nav-panel,
+    .nav-panel.is-expanded {
+        height: 0 !important;
+        overflow: hidden;
+        pointer-events: none;
+        background: transparent;
+    }
+}
+
 .panel-inner {
     max-width: 1440px;
     margin: 0 auto;

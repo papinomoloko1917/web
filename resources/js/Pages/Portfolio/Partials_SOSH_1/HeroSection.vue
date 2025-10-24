@@ -30,7 +30,7 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="m1 9 4-4-4-4" />
                             </svg>
-                            <span class="ml-1 text-sm font-medium text-gray-400 md:ml-2">Dynasty</span>
+                            <span class="ml-1 text-sm font-medium text-gray-400 md:ml-2">МБОУ СОШ №1</span>
                         </div>
                     </li>
                 </ol>
@@ -41,7 +41,7 @@
         <div data-reveal data-delay="200"
             class="relative mb-0 h-[500px] md:h-[600px] lg:h-[800px] w-full overflow-hidden">
             <!-- Фоновое изображение -->
-            <img :src="mainImage" alt="Dynasty - фасад здания"
+            <img :src="mainImage" alt="МБОУ СОШ №1 - фасад здания"
                 class="absolute inset-0 w-full h-full object-cover shadow-2xl hero-image" loading="eager">
 
             <!-- Градиентный оверлей для читаемости текста -->
@@ -53,12 +53,12 @@
                     <!-- Заголовок -->
                     <h1
                         class="font-montserrat text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 md:mb-6">
-                        ДИНАСТИЯ
+                        МБОУ СОШ №1
                     </h1>
 
                     <!-- Описание -->
                     <p class="text-base md:text-lg lg:text-xl text-gray-200 max-w-3xl mb-6 md:mb-8">
-                        Современный гостинично-ресторанный комплекс
+                        Современное образовательное учреждение с полным комплексом инженерных систем
                     </p>
 
                     <!-- Теги услуг - только для десктопа -->

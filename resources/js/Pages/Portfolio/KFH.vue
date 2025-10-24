@@ -25,18 +25,19 @@ import Map from '../MainSections/Map.vue';
 
 const projectData = {
     name: 'КФХ',
-    subtitle: 'Крестьянско-фермерское хозяйство - комплексное электрообеспечение',
+    subtitle: 'Крестьянско-фермерское хозяйство',
     heroImage: '/images/our_projects/kfh_loza/1.jpg',
     services: [
         'Электромонтаж',
         'Проектирование',
-        'Локальные сети'
+        'Локальные сети',
+        'Видеонаблюдение'
     ],
     galleryPhotos: [
         { src: '/images/our_projects/kfh_loza/1.jpg', alt: 'КФХ - Общий вид объекта' },
-        { src: '/images/our_projects/kfh_loza/2.jpg', alt: 'КФХ - Электрооборудование' },
-        { src: '/images/our_projects/kfh_loza/3.jpg', alt: 'КФХ - Системы контроля' },
-        { src: '/images/our_projects/kfh_loza/4.jpg', alt: 'КФХ - Инженерные системы' },
+        { src: '/images/our_projects/kfh_loza/2.jpg', alt: 'КФХ - Коммутационный шкаф' },
+        { src: '/images/our_projects/kfh_loza/3.jpg', alt: 'КФХ - Wifi-мост, камеры' },
+        { src: '/images/our_projects/kfh_loza/4.jpg', alt: 'КФХ - PTZ-камера' },
         { src: '/images/our_projects/kfh_loza/5.jpg', alt: 'КФХ - Готовый объект' }
     ]
 };

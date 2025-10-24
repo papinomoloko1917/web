@@ -52,6 +52,18 @@ export default {
             isMobileOpen: false
         };
     },
+    mounted() {
+        // Сбрасываем expanded при изменении размера окна на мобильное
+        this.handleResize = () => {
+            if (window.innerWidth < 1024 && this.expanded) {
+                this.setExpanded(false);
+            }
+        };
+        window.addEventListener('resize', this.handleResize);
+    },
+    beforeUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+    },
     methods: {
         setExpanded(val) {
             this.expanded = !!val;
@@ -142,11 +154,15 @@ export default {
     /* ещё на ~20% меньше от 112px */
     /* плавное наращивание высоты контейнера, чтобы толкать контент вниз */
     transition: min-height .42s cubic-bezier(.22, 1, .36, 1);
+    border: none;
+    /* явно убираем border */
 }
 
 /* Больше не увеличиваем высоту контейнера при раскрытии на десктопе — панель перекрывает контент */
 .nav-root.nav--expanded {
     min-height: var(--nav-h);
+    border: none;
+    /* явно убираем border при expanded */
 }
 
 /* Зона навигации объединяет область шапки и панель на ширину экрана */
@@ -159,11 +175,22 @@ export default {
     height: var(--nav-h);
     /* зона покрывает текущую высоту nav-root */
     z-index: 10;
+    border: none;
+    /* убираем бордеры */
 }
 
 /* При раскрытии увеличиваем интерактивную зону, чтобы курсор мог перейти на панель */
 .nav-zone.is-expanded {
     height: calc(var(--nav-h) + var(--panel-h));
+}
+
+/* На мобильных устройствах зона всегда имеет базовую высоту */
+@media (max-width: 1023px) {
+
+    .nav-zone,
+    .nav-zone.is-expanded {
+        height: var(--nav-h) !important;
+    }
 }
 
 /* Заливка самого navbar (верхняя часть), плавно темнеет */
@@ -180,10 +207,23 @@ export default {
     pointer-events: none;
     /* не блокирует клики по верхним пунктам */
     transition: background-color .42s cubic-bezier(.22, 1, .36, 1);
+    border: none;
+    /* убираем возможные бордеры */
+    box-shadow: none;
+    /* убираем тени */
 }
 
 .nav-top-bg.is-expanded {
     background: #232323;
+}
+
+/* На мобильных устройствах фон всегда белый */
+@media (max-width: 1023px) {
+
+    .nav-top-bg,
+    .nav-top-bg.is-expanded {
+        background: white;
+    }
 }
 
 /* Фон на всю ширину экрана (100vw), закреплён под шапкой */
@@ -211,6 +251,18 @@ export default {
     box-shadow: none;
 }
 
+/* На мобильных устройствах nav-bg всегда скрыт */
+@media (max-width: 1023px) {
+
+    .nav-bg,
+    .nav-bg.is-expanded {
+        height: 0 !important;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+    }
+}
+
 /* Внутреннее содержимое шапки всегда поверх фона */
 .nav-inner {
     position: relative;
@@ -225,6 +277,10 @@ export default {
     display: flex;
     align-items: center;
     /* вертикальное центрирование логотипа */
+    border: none;
+    /* убираем возможные бордеры */
+    box-shadow: none;
+    /* убираем тени */
 }
 
 

@@ -38,4 +38,12 @@ class PortfolioController extends Controller
     {
         return Inertia::render('Portfolio/KFH');
     }
+
+    /**
+     * Display the SOSH_1 project page.
+     */
+    public function sosh1(): Response
+    {
+        return Inertia::render('Portfolio/SOSH_1');
+    }
 }

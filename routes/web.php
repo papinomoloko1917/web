@@ -17,6 +17,7 @@ Route::get('/portfolio/gallery-of-taste', [PortfolioController::class, 'galleryO
 Route::get('/portfolio/nesk', [PortfolioController::class, 'nesk'])->name('portfolio.nesk');
 Route::get('/portfolio/dynasty', [PortfolioController::class, 'dynasty'])->name('portfolio.dynasty');
 Route::get('/portfolio/kfh', [PortfolioController::class, 'kfh'])->name('portfolio.kfh');
+Route::get('/portfolio/sosh-1', [PortfolioController::class, 'sosh1'])->name('portfolio.sosh-1');
 
 // Страница "О компании"
 Route::get('/about', [AboutController::class, 'index'])->name('about.index');

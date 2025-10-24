@@ -1,42 +1,21 @@
 <template>
-    <section class="photo-gallery-section py-16 md:py-24 lg:py-32 relative" style="background-color: #060604;">
-        <div class="container-custom">
-            <!-- Заголовок секции -->
-            <div data-reveal data-delay="200" class="mb-12 md:mb-16 text-center">
-                <h2
-                    class="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-gray-100">
-                    Фотогалерея
-                </h2>
-                <p class="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
-                    Визуальный обзор реализованного проекта
+    <section class="photo-gallery-section section-divider-bottom" style="background: #161617;">
+        <div class="container-custom py-12 lg:py-20">
+            <div data-reveal data-delay="300">
+                <h2 class="font-montserrat text-3xl md:text-4xl lg:text-4xl font-extrabold text-gray-200 mb-6">
+                    ФОТОГАЛЕРЕЯ ПРОЕКТА</h2>
+                <p class="text-gray-400 mb-8">
+                    Посмотрите на реализованные системы и оснащение объекта
                 </p>
-            </div>
 
-            <!-- Карусель фотографий -->
-            <div data-reveal data-delay="400">
+                <!-- Компонент карусели с фотогалереей -->
                 <PhotoGalleryCarousel :images="photos" />
-            </div>
-        </div>
-
-        <!-- Кнопка возврата к проектам -->
-        <div data-reveal data-delay="600" class="container-custom mt-16 md:mt-20 lg:mt-24">
-            <div class="flex justify-center">
-                <Link href="/projects"
-                    class="return-button inline-flex items-center px-8 py-4 text-base md:text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group">
-                <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300"
-                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                </svg>
-                Вернуться к проектам
-                </Link>
             </div>
         </div>
     </section>
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3';
 import PhotoGalleryCarousel from '../../Portfolio/Partials_GalleryOfTaste/PhotoGalleryCarousel.vue';
 
 defineProps({
@@ -48,12 +27,62 @@ defineProps({
 </script>
 
 <style scoped>
-.return-button {
-    border-radius: 16px;
-    transition: all 0.3s ease;
+.photo-gallery-section {
+    position: relative;
 }
 
-.return-button:hover {
-    border-radius: 24px;
+/* Красивый серый разделитель секций */
+.section-divider-bottom {
+    position: relative;
+    padding-bottom: 0rem;
+}
+
+.section-divider-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right,
+            transparent 0%,
+            rgba(156, 163, 175, 0.15) 10%,
+            rgba(156, 163, 175, 0.4) 50%,
+            rgba(156, 163, 175, 0.15) 90%,
+            transparent 100%);
+    pointer-events: none;
+}
+
+/* Дополнительная тонкая линия для глубины */
+.section-divider-bottom::before {
+    content: '';
+    position: absolute;
+    bottom: calc(2rem + 1px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right,
+            transparent 0%,
+            rgba(255, 255, 255, 0.03) 10%,
+            rgba(255, 255, 255, 0.08) 50%,
+            rgba(255, 255, 255, 0.03) 90%,
+            transparent 100%);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .section-divider-bottom {
+        padding-bottom: 3rem;
+    }
+
+    .section-divider-bottom::after {
+        bottom: 1.5rem;
+    }
+
+    .section-divider-bottom::before {
+        bottom: calc(1.5rem + 1px);
+    }
 }
 </style>

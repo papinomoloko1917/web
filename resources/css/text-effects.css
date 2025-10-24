@@ -80,3 +80,16 @@
     transform: scaleX(1);
     transform-origin: left center;
 }
+
+/* Предотвращаем применение стилей expanded на мобильных устройствах */
+@media (max-width: 1023px) {
+    .nav--expanded .menu-link::after {
+        background: #4b5563;
+        /* серый цвет для мобильных */
+    }
+
+    /* Убираем белое подчёркивание для триггера услуг на мобильных */
+    .nav--expanded .menu-link--short-underline::after {
+        transform: scaleX(0);
+    }
+}

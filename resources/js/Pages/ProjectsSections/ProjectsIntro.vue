@@ -1,5 +1,5 @@
 <template>
-    <section class="pt-5 lg:pt-20 lg:pb-5">
+    <section class="pt-5 lg:pt-28 lg:pb-5">
         <div class="container-custom">
             <h1 data-reveal data-delay="0"
                 class="text-center font-montserrat text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 mb-6">
