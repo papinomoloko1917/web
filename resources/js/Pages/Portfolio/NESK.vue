@@ -7,7 +7,7 @@
 
     <NeskAboutSection />
 
-    <NeskGallerySection :photos="projectData.galleryPhotos" />
+    <PhotoGallerySection :images="projectData.galleryPhotos" />
 
     <Connection />
 
@@ -19,7 +19,7 @@ import { Head } from '@inertiajs/vue3';
 import { onMounted } from 'vue';
 import NeskHeroSection from './Partials_NESK/NeskHeroSection.vue';
 import NeskAboutSection from './Partials_NESK/NeskAboutSection.vue';
-import NeskGallerySection from './Partials_NESK/NeskGallerySection.vue';
+import PhotoGallerySection from '../../Components/PhotoGallerySection.vue';
 import Connection from '../MainSections/Connection.vue';
 import Map from '../MainSections/Map.vue';
 

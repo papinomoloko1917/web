@@ -7,7 +7,7 @@
 
     <KfhAboutSection />
 
-    <KfhGallerySection :photos="projectData.galleryPhotos" />
+    <PhotoGallerySection :images="projectData.galleryPhotos" />
 
     <Connection />
 
@@ -19,7 +19,7 @@ import { Head } from '@inertiajs/vue3';
 import { onMounted } from 'vue';
 import KfhHeroSection from './Partials_KFH/KfhHeroSection.vue';
 import KfhAboutSection from './Partials_KFH/KfhAboutSection.vue';
-import KfhGallerySection from './Partials_KFH/KfhGallerySection.vue';
+import PhotoGallerySection from '../../Components/PhotoGallerySection.vue';
 import Connection from '../MainSections/Connection.vue';
 import Map from '../MainSections/Map.vue';
 

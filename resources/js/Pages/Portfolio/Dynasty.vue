@@ -19,7 +19,7 @@ import { Head } from '@inertiajs/vue3';
 import { onMounted } from 'vue';
 import HeroSection from './Partials_Dynasty/HeroSection.vue';
 import AboutProjectSection from './Partials_Dynasty/AboutProjectSection.vue';
-import PhotoGallerySection from './Partials_Dynasty/PhotoGallerySection.vue';
+import PhotoGallerySection from '../../Components/PhotoGallerySection.vue';
 import Connection from '../MainSections/Connection.vue';
 import Map from '../MainSections/Map.vue';
 
@@ -46,7 +46,15 @@ const galleryImages = [
     { src: '/images/our_projects/caplya/4.jpg', alt: 'Dynasty - фото 4' },
     { src: '/images/our_projects/caplya/5.jpg', alt: 'Dynasty - фото 5' },
     { src: '/images/our_projects/caplya/6.jpg', alt: 'Dynasty - фото 6' },
-    { src: '/images/our_projects/caplya/7.jpg', alt: 'Dynasty - фото 7' }
+    { src: '/images/our_projects/caplya/7.jpg', alt: 'Dynasty - фото 7' },
+    { src: '/images/our_projects/caplya/8.jpg', alt: 'Dynasty - фото 8' },
+    { src: '/images/our_projects/caplya/9.jpg', alt: 'Dynasty - фото 9' },
+    { src: '/images/our_projects/caplya/10.jpg', alt: 'Dynasty - фото 10' },
+    { src: '/images/our_projects/caplya/11.jpg', alt: 'Dynasty - фото 11' },
+    { src: '/images/our_projects/caplya/12.jpg', alt: 'Dynasty - фото 12' },
+    { src: '/images/our_projects/caplya/13.jpg', alt: 'Dynasty - фото 13' },
+    { src: '/images/our_projects/caplya/14.jpg', alt: 'Dynasty - фото 14' }
+
 ];
 
 onMounted(() => {

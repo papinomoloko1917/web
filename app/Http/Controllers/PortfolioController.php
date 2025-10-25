@@ -46,4 +46,20 @@ class PortfolioController extends Controller
     {
         return Inertia::render('Portfolio/SOSH_1');
     }
+
+    /**
+     * Display the SHOR_VVS project page.
+     */
+    public function shorVvs(): Response
+    {
+        return Inertia::render('Portfolio/SHOR_VVS');
+    }
+
+    /**
+     * Display the MFC project page.
+     */
+    public function mfc(): Response
+    {
+        return Inertia::render('Portfolio/MFC');
+    }
 }

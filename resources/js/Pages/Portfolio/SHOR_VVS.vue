@@ -1,6 +1,6 @@
 <template>
 
-    <Head title="МБОУ СОШ №1 - Проект" />
+    <Head title="ГБУ ДО КК СШОР ВВС - Проект" />
 
     <HeroSection :main-image="projectImages.main" :services="services" />
 
@@ -17,38 +17,37 @@
 <script setup>
 import { Head } from '@inertiajs/vue3';
 import { onMounted } from 'vue';
-import HeroSection from './Partials_SOSH_1/HeroSection.vue';
-import AboutProjectSection from './Partials_SOSH_1/AboutProjectSection.vue';
+import HeroSection from './Partials_SHOR_VVS/HeroSection.vue';
+import AboutProjectSection from './Partials_SHOR_VVS/AboutProjectSection.vue';
 import PhotoGallerySection from '../../Components/PhotoGallerySection.vue';
 import Connection from '../MainSections/Connection.vue';
 import Map from '../MainSections/Map.vue';
 
 const services = [
-    'Проектирование',
-    'Электромонтаж',
-    'Интернет',
+    'Электроснабжение',
+    'Наружное освещение',
+    'Внутреннее освещение',
     'Видеонаблюдение',
-    'Пожарная автоматика',
-    'Система оповещения'
+    'Локальные сети',
+    'Пожарная сигнализация'
 ];
 
 const projectImages = {
-    main: '/images/our_projects/SOSH_1/1.jpg',
+    main: '/images/our_projects/shor_vodnyi/1.jpg',
     gallery: [
-        '/images/our_projects/SOSH_1/2.jpg',
-        '/images/our_projects/SOSH_1/3.jpg'
+        '/images/our_projects/shor_vodnyi/2.jpg',
+        '/images/our_projects/shor_vodnyi/3.jpg'
     ]
 };
 
 const galleryImages = [
-    { src: '/images/our_projects/SOSH_1/2.jpg', alt: 'МБОУ СОШ №1 - фото 2' },
-    { src: '/images/our_projects/SOSH_1/3.jpg', alt: 'МБОУ СОШ №1 - фото 3' },
-    { src: '/images/our_projects/SOSH_1/4.jpg', alt: 'МБОУ СОШ №1 - фото 4' },
-    { src: '/images/our_projects/SOSH_1/5.jpg', alt: 'МБОУ СОШ №1 - фото 5' },
-    { src: '/images/our_projects/SOSH_1/6.jpg', alt: 'МБОУ СОШ №1 - фото 6' },
-    { src: '/images/our_projects/SOSH_1/7.jpg', alt: 'МБОУ СОШ №1 - фото 7' },
-    { src: '/images/our_projects/SOSH_1/8.jpg', alt: 'МБОУ СОШ №1 - фото 8' },
-    { src: '/images/our_projects/SOSH_1/9.jpg', alt: 'МБОУ СОШ №1 - фото 9' }
+    { src: '/images/our_projects/shor_vodnyi/2.jpg', alt: 'ГБУ ДО КК СШОР ВВС - фото 2' },
+    { src: '/images/our_projects/shor_vodnyi/3.jpg', alt: 'ГБУ ДО КК СШОР ВВС - фото 3' },
+    { src: '/images/our_projects/shor_vodnyi/4.jpg', alt: 'ГБУ ДО КК СШОР ВВС - фото 4' },
+    { src: '/images/our_projects/shor_vodnyi/5.jpg', alt: 'ГБУ ДО КК СШОР ВВС - фото 5' },
+    { src: '/images/our_projects/shor_vodnyi/6.jpg', alt: 'ГБУ ДО КК СШОР ВВС - фото 6' },
+    { src: '/images/our_projects/shor_vodnyi/7.jpg', alt: 'ГБУ ДО КК СШОР ВВС - фото 7' },
+    { src: '/images/our_projects/shor_vodnyi/8.jpg', alt: 'ГБУ ДО КК СШОР ВВС - фото 8' }
 ];
 
 onMounted(() => {

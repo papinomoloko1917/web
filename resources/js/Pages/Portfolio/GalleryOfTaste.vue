@@ -6,7 +6,7 @@
 
     <AboutProjectSection />
 
-    <PhotoGallerySection :images="galleryImages" />
+    <PhotoGallerySection :images="galleryImages" :show-divider="true" />
 
     <ArchitecturalLightingSection :image-before="projectImages.gallery[1]" :image-after="projectImages.main" />
 
@@ -22,7 +22,7 @@ import { onMounted } from 'vue';
 import HeroSection from './Partials_GalleryOfTaste/HeroSection.vue';
 import ArchitecturalLightingSection from './Partials_GalleryOfTaste/ArchitecturalLightingSection.vue';
 import AboutProjectSection from './Partials_GalleryOfTaste/AboutProjectSection.vue';
-import PhotoGallerySection from './Partials_GalleryOfTaste/PhotoGallerySection.vue';
+import PhotoGallerySection from '../../Components/PhotoGallerySection.vue';
 import Connection from '../MainSections/Connection.vue';
 import Map from '../MainSections/Map.vue';
 
